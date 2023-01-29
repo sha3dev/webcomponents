@@ -1,0 +1,3 @@
+{
+  "extends": "@sha3dev/tsconfig/solid.json"
+}

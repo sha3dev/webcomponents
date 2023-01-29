@@ -1,0 +1,21 @@
+{
+  "name": "@sha3dev/webcomponents",
+  "version": "0.0.0",
+  "private": false,
+  "scripts": {
+    "lint": "eslint 'src/**'",
+    "doc": "typedoc --out docs 'src/index.ts'"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "solid-js": "^1.6.9"
+  },
+  "devDependencies": {
+    "@sha3dev/eslint-config-custom": "*",
+    "@sha3dev/tsconfig": "*",
+    "sass": "^1.57.1",
+    "typescript": "*",
+    "vitest": "*"
+  }
+}
