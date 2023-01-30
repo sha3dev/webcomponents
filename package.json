@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@sha3dev/eslint-config-custom": "*",
+    "@sha3dev/styles": "^0.0.0",
     "@sha3dev/tsconfig": "*",
     "sass": "^1.57.1",
     "typescript": "*",
