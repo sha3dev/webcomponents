@@ -1,0 +1,95 @@
+// imports
+
+@use "@sha3dev/styles" as sha3;
+
+// vars
+
+$burgerColor: var(--solid-saas-navbar__burgerColor, #000);
+$burgerTransitionTime: var(--solid-saas-navbar__burgerTransitionTime, 0.5s);
+$burgerSize: var(--solid-saas-navbar__burgerSize, 16px);
+$burgerLineHeight: var(--solid-saas-navbar__burgerLineHeight, 2px);
+$burgerPadding: calc((#{$burgerSize} - (#{$burgerLineHeight}) * 3) / 2);
+
+// component
+
+.sha3-navbar {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__column {
+    display: flex;
+    align-items: center;
+  }
+  &__menu {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    @include sha3.media(l) {
+      display: flex;
+    }
+    & > * {
+      margin: 0 1em;
+    }
+  }
+  &__ctas {
+    display: flex;
+    align-items: center;
+    & > * {
+      margin: 0 1em;
+    }
+  }
+  &__burger {
+    display: block;
+    cursor: pointer;
+    width: $burgerSize;
+    height: $burgerSize;
+    position: relative;
+    margin-left: 1em;
+    @include sha3.media(l) {
+      display: none !important;
+    }
+  }
+  &__burgerIconContainer {
+    position: absolute;
+    top: calc(50% - #{$burgerLineHeight/2});
+  }
+  &__icon {
+    width: $burgerSize;
+    height: $burgerLineHeight;
+    background: $burgerColor;
+    transition: $burgerTransitionTime;
+    &:before {
+      top: calc(-1 * $burgerPadding);
+    }
+    &:after {
+      top: $burgerPadding;
+    }
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: $burgerSize;
+      height: $burgerLineHeight;
+      background: $burgerColor;
+      transition: $burgerTransitionTime;
+    }
+  }
+  &[data-isopen="true"] & {
+    &__menu {
+      display: flex;
+    }
+    &__icon {
+      background: transparent;
+      &:before {
+        top: 0;
+        transform: rotate(135deg);
+      }
+      &:after {
+        top: 0;
+        transform: rotate(225deg);
+      }
+    }
+  }
+}
