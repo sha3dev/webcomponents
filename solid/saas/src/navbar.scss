@@ -17,6 +17,7 @@ $burgerPadding: calc((#{$burgerSize} - (#{$burgerLineHeight}) * 3) / 2);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   &__column {
     display: flex;
@@ -24,13 +25,22 @@ $burgerPadding: calc((#{$burgerSize} - (#{$burgerLineHeight}) * 3) / 2);
   }
   &__menu {
     display: none;
+    position: absolute;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
+    right: 0;
+    top: 100%;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1;
     @include sha3.media(l) {
+      align-items: center;
+      position: initial;
       display: flex;
-    }
-    & > * {
-      margin: 0 1em;
+      flex-direction: row;
+      & > * {
+        margin: 0 1em;
+      }
     }
   }
   &__ctas {
@@ -38,6 +48,7 @@ $burgerPadding: calc((#{$burgerSize} - (#{$burgerLineHeight}) * 3) / 2);
     align-items: center;
     & > * {
       margin: 0 1em;
+      white-space: nowrap;
     }
   }
   &__burger {
