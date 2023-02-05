@@ -13,8 +13,6 @@ import { Component } from "solid-js";
  * consts
  */
 
-const COMPONENT_NAME = "mockup";
-
 /**
  * types
  */

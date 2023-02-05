@@ -3,7 +3,7 @@
  */
 
 import "./navbar.scss";
-import { Component, onMount, createSignal, onCleanup, JSX } from "solid-js";
+import { Component, createSignal, JSX } from "solid-js";
 
 /**
  * declares
@@ -43,10 +43,6 @@ const Navbar: Component<Props> = (props: Props) => {
    */
 
   const [isOpen, setIsOpen] = createSignal(false);
-
-  /**
-   * private: methods
-   */
 
   /**
    * lifecycle
